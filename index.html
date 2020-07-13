@@ -1,1 +1,59 @@
-<h1>Website under Progress</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SirAtul -- Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="blog.html">Blog & Projects</a>
+        <a href="contactInfo.html" id="lastNavTab">Contact Details</a>
+      </nav>
+      <div>
+        <img
+          id="myPicture"
+          src="./images/myProfilePicture.jpeg"
+          alt="myPicture"
+        />
+        <p>
+          Hi! My Name is Atul Singh. Currently, I am a student at SRM Institute
+          of Science and Technology, where I am pursuing B.Tech in Computer Science.
+          I created this website created as a fun project during COVID-19 quarantine days.
+        </p>
+
+
+        <p id="welcomeMsg">
+        <strong><em>Welcome</em><strong></strong>
+        </p>
+
+      </div>
+    </header>
+
+    <div class="divAboveMain">
+        <h3>Images of Some of My Projects</h3>
+    </div>
+
+    <main>
+        <img src="./images/previous.png" alt="previousButton" class="sliderButton" onclick="imageChange('prev')">
+        <a href="flappyBirdBlog.html">
+        <img id="mainImage" src="./images/projectImages/flappy-bird.jpg" alt="flappy-bird" class="imageGallery"><span id="mainImageTitle">Flappy Bird</span></a>
+        <img class="sliderButton" src="./images/next.png" alt="nextButton" onclick="imageChange('next')">
+    </main>
+
+    <footer>
+      <p><strong><em>Created by SirAtul1204</em></strong></p>
+      <p>For more contact details visit, <a href="contactInfo.html">Contact Details</a></p>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp Message Bomber</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../../blog.html" class="active">Blog & Projects</a>
+        <a href="../../contactInfo.html" id="lastNavTab">Contact Details</a>
+      </nav>
+    </header>
+
+    <main class="projectDesc">
+      <p>
+        It's one of the first projects I created using Python, I learnt about
+        Selenium and wanted to try that out.
+      </p>
+      <p>
+        Selenium is tool to automate web browsers. You can read more about it <a href="https://www.selenium.dev/about/" target="_blank"><em>here.</em></a> I am using Selenium with Python, it lets us use Selenium via Python Programmin Language. <a href="https://selenium-python.readthedocs.io/" target="_blank"><em>Selenium with Python Docs</em></a>
+      </p>
+      <p>
+        So, its a meassage bomber, it bombs someone with thousands and thousands of messages to someone on Whatsapp, a app almost everyone use and the good part is you don't actually need to have his/her contact saved in your phone's contact list. In the source code I have a variable called <strong>msg</strong> where the user can store the message which is to bombed, I just did a "Yo!" but it can be anything and can be of anynumber of lines/words.
+      </p>
+      <pre>
+          <code>
+msg = '''Yo!'''
+          </code>
+      </pre>
+      <p>To make this program more dynamic we can use a input function and ask user for a message everytime user runs the program. Then, the program asks for a contact number. After that we need a webdriver which can be downloaded from Selenium's Website, it lets Selenium access your browser, I am using Google Chrome so I have downloaded webdriver for Google Chrome and then asked Selenium to get the whatsapp web website <a href="https://web.whatsapp.com" target="_blank">(web.whatsapp.com)</a> and pause the Python script for 10 seconds so that he can login to Whatsapp Web portal scanning the QR code</p>
+      <pre>
+        <code>
+driver = webdriver.Chrome()
+driver.get("https://web.whatsapp.com/")
+time.sleep(10) #Wait period for you to log-in
+        </code>
+      </pre>
+      <p>Now there is a trick by you can directly message anyone on whatsapp just by a link, formed by a contact number and a message. so, in my Python script I asked Selenium to get that link or open that link in the browser window, you can se that in the code given below</p>
+      <pre>
+        <code>
+serviceurl = "https://wa.me/"
+params = dict()
+params['text'] = msg
+url = serviceurl + '91' + contact_number + '/?' + urllib.parse.urlencode(params)
+driver.get(url)
+        </code>
+      </pre>
+      <p>
+        After this we just need to click on some buttons which can be done by Selenium with Python <em>click()</em> function which is called on a web element which can be found by its XPath using the <em>find_element_by_xpath</em>
+      </p>
+      <p>
+        After this process, we have a chat windows in front of us of the contact we want to do the prank on. So now I use a loop to get the input text field (where we write our message) by its XPath, had the Selnium to type the message and then press the SEND button.
+      </p>
+      <pre>
+        <code>
+for i in range(0, 1000): #you can increase or decrease the number by changing 1000
+    WebElement = driver.find_element_by_xpath("//*[@id='main']/footer/div[1]/div[2]/div/div[2]")
+    WebElement.send_keys(msg)
+    WebElement.send_keys(Keys.ENTER)
+        </code>
+      </pre>
+      <p>So now, the loop will repeat itself for 1000 times which can be increased or decreased by changing the second parameter in range() function.</p>
+      <p>
+        <strong>**For full source code visit, <a href="https://github.com/SirAtul1204/Whatsapp-Message-Bomber">Github Repository</a>**</strong>
+      </p>
+    </main>
+  </body>
+</html>
