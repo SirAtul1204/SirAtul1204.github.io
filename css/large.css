@@ -1,0 +1,56 @@
+@media Screen and (min-width: 900px) {
+	#myPicture {
+		width: 9vw;
+	}
+
+	header div {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	main {
+		display: none;
+	}
+
+	#largeImageGallery {
+		background-color: #1f0244;
+		display: inline-block;
+		padding: 2%;
+		width: 100vw;
+	}
+
+	.imagesOfLargeImageGallery {
+		display: inline-block;
+		margin: 1%;
+	}
+
+	.imagesOfLargeImageGallery img {
+		display: block;
+		width: 20vw;
+	}
+
+	.imagesOfLargeImageGallery span {
+		color: #ffffff;
+		text-align: center;
+		display: block;
+		font-family: "Fondamento", cursive;
+	}
+
+	.socialMedia img {
+		width: 8vw;
+	}
+
+	.contact div {
+		margin-bottom: 2vh;
+	}
+
+	#mainBlog {
+		padding-bottom: 1vh;
+	}
+
+	.projectDesc {
+		display: block;
+		padding: 1vw 5vw;
+	}
+
+	
